@@ -41,5 +41,17 @@ public class Dog : PlayerController
             transform.position = new Vector3(-xBound, transform.position.y, transform.position.z);
         }
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Dog"))
+        {
+            GameManager.instance.scoreInt += 10;
+            Destroy(other.gameObject);
+        }
+        else
+        {
+            GameManager.instance.healthInt--;
+            Destroy(other.gameObject);
+        }
+    }
 }
