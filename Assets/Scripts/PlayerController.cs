@@ -19,10 +19,13 @@ public abstract class PlayerController : MonoBehaviour
     }
     protected void MovePlayer(float speed , float rotationSpeed)
     {
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * Time.deltaTime * vertical * speed);
-        transform.Rotate(Vector3.up * Time.deltaTime * horizontal * rotationSpeed);
+        if(GameManager.instance.isGameOver == false)
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical = Input.GetAxis("Vertical");
+            transform.Translate(Vector3.forward * Time.deltaTime * vertical * speed);
+            transform.Rotate(Vector3.up * Time.deltaTime * horizontal * rotationSpeed);
+        }
     }
     protected abstract void Boundary();
     protected void ControllAnimation(Animator playerAnim)

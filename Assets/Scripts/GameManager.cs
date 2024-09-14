@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,11 +10,14 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI scoreTx;
     [SerializeField] TextMeshProUGUI healthTx;
+    [SerializeField] GameObject endingObj;
     public int scoreInt;
     public int healthInt;
+    public bool isGameOver;
 
     private void Awake()
     {
+        isGameOver = false;
         instance = this;
     }
     // Start is called before the first frame update
@@ -28,6 +32,7 @@ public class GameManager : MonoBehaviour
     {
         UpdateScoreText();
         UpdateHealthText();
+        GameOver();
     }
     void UpdateScoreText()
     {
@@ -36,5 +41,17 @@ public class GameManager : MonoBehaviour
     void UpdateHealthText()
     {
         healthTx.text = "Health : " + healthInt;
+    }
+    void GameOver()
+    {
+        if(healthInt == 0)
+        {
+            isGameOver = true;
+            endingObj.SetActive(true);
+        }
+    }
+    public void RestartButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

@@ -23,11 +23,14 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator SpawnFood()
     {
-        yield return new WaitForSeconds(0.5f);
-        int foodRandomIndex = Random.Range(0, foods.Length);
-        SpawnPositonRotation();
-        Instantiate(foods[foodRandomIndex], spawnPos, transform.rotation);
-        StartCoroutine(SpawnFood());
+        if(GameManager.instance.isGameOver == false)
+        {
+            yield return new WaitForSeconds(0.5f);
+            int foodRandomIndex = Random.Range(0, foods.Length);
+            SpawnPositonRotation();
+            Instantiate(foods[foodRandomIndex], spawnPos, transform.rotation);
+            StartCoroutine(SpawnFood());
+        }
     }
     void SpawnPositonRotation()
     {

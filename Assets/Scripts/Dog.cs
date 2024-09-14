@@ -45,13 +45,19 @@ public class Dog : PlayerController
     {
         if(other.gameObject.CompareTag("Dog"))
         {
-            GameManager.instance.scoreInt += 10;
-            Destroy(other.gameObject);
+            if(GameManager.instance.isGameOver == false)
+            {
+                GameManager.instance.scoreInt += 10;
+                Destroy(other.gameObject);
+            }
         }
         else
         {
-            GameManager.instance.healthInt--;
-            Destroy(other.gameObject);
+            if(GameManager.instance.isGameOver == false)
+            {
+                GameManager.instance.healthInt--;
+                Destroy(other.gameObject);
+            }
         }
     }
 }
