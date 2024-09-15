@@ -71,18 +71,17 @@ public class GameManager : MonoBehaviour
     }
     void CreateChoosenItem()
     {
-        Vector3 pos = new Vector3(0, 0, 0);
         if(MenuManager.isCowActive)
         {
-            Instantiate(cowPlayer, pos, cowPlayer.transform.rotation);
+            cowPlayer.SetActive(true);
         }
         else if(MenuManager.isDogActive)
         {
-            Instantiate(dogPlayer, pos, dogPlayer.transform.rotation);
+            dogPlayer.SetActive(true);
         }
         else if(MenuManager.isHorseActive)
         {
-            Instantiate(horsePlayer, pos, horsePlayer.transform.rotation);
+            horsePlayer.SetActive(true);
         }
     }
 }

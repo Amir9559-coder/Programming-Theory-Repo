@@ -627,6 +627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5871c32f5490bf245a866258bde01024, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joyStick: {fileID: 0}
+  playerRb: {fileID: 6722189705225552308}
   goodSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
   badSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
 --- !u!82 &6532065062482500119

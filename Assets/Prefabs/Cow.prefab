@@ -1883,6 +1883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e494f62c736191b48b4b7f98706ac46b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joyStick: {fileID: 0}
+  playerRb: {fileID: 164077081631614579}
   goodSound: {fileID: 8300000, guid: 08ab7053d586c458db3774d33c141a4b, type: 3}
   badSound: {fileID: 8300000, guid: 913d6445ee8cc4152a9c18da590ee203, type: 3}
 --- !u!54 &164077081631614579

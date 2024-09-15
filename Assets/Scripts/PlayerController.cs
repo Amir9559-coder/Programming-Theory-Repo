@@ -7,10 +7,12 @@ public abstract class PlayerController : MonoBehaviour
     float horizontal;
     float vertical;
     protected AudioSource audioPlayer;
+    [SerializeField] FixedJoystick joyStick;
+    [SerializeField] Rigidbody playerRb;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -22,6 +24,10 @@ public abstract class PlayerController : MonoBehaviour
     {
         if(GameManager.instance.isGameOver == false)
         {
+            
+            //for JOYSTICK:
+            playerRb.velocity = new Vector3(joyStick.Horizontal * speed, playerRb.velocity.y, joyStick.Vertical * speed);
+            //for keyWord:
             horizontal = Input.GetAxis("Horizontal");
             vertical = Input.GetAxis("Vertical");
             transform.Translate(Vector3.forward * Time.deltaTime * vertical * speed);
