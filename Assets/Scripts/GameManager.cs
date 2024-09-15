@@ -11,12 +11,14 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreTx;
     [SerializeField] TextMeshProUGUI healthTx;
     [SerializeField] GameObject endingObj;
+    [SerializeField] GameObject cowPlayer;
+    [SerializeField] GameObject dogPlayer;
     public int scoreInt;
     public int healthInt;
     public bool isGameOver;
-
     private void Awake()
     {
+        CreateChoosenItem();
         isGameOver = false;
         instance = this;
     }
@@ -48,10 +50,26 @@ public class GameManager : MonoBehaviour
         {
             isGameOver = true;
             endingObj.SetActive(true);
+            if(scoreInt > MenuManager.bestScoreInt)
+            {
+                DataSaver.Serialization.Save();
+            }
         }
     }
     public void RestartButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    void CreateChoosenItem()
+    {
+        Vector3 pos = new Vector3(0, 0, 0);
+        if(MenuManager.isCowActive)
+        {
+            Instantiate(cowPlayer, pos, cowPlayer.transform.rotation);
+        }
+        else if(MenuManager.isDogActive)
+        {
+            Instantiate(dogPlayer, pos, dogPlayer.transform.rotation);
+        }
     }
 }

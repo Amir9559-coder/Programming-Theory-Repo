@@ -3,14 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] GameObject startObj;
     [SerializeField] GameObject itemsObj;
     [SerializeField] GameObject readyObj;
-    public bool isDogActive = false;
-    public bool isCowActive = false;
+    [SerializeField] GameObject bestScore;
+    [SerializeField] TextMeshProUGUI bestScoreTX;
+    public static bool isDogActive = false;
+    public static bool isCowActive = false;
+    public static int bestScoreInt;
     public void StartButton()
     {
         startObj.SetActive(false);
@@ -20,15 +24,19 @@ public class MenuManager : MonoBehaviour
     {
         isDogActive = true;
         isCowActive = false;
+        DataSaver.Serialization.LoadData();
         readyObj.SetActive(true);
-        Debug.Log("Record");
+        bestScore.SetActive(true);
+        bestScoreTX.text = "Best Score : " + bestScoreInt;
     }
     public void CowButton()
     {
         isDogActive = false;
         isCowActive = true;
+        DataSaver.Serialization.LoadData();
         readyObj.SetActive(true);
-        Debug.Log("Record");
+        bestScore.SetActive(true);
+        bestScoreTX.text = "Best Score : " + bestScoreInt;
     }
     public void BackButton()
     {
