@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject endingObj;
     [SerializeField] GameObject cowPlayer;
     [SerializeField] GameObject dogPlayer;
+    [SerializeField] GameObject horsePlayer;
     public int scoreInt;
     public int healthInt;
     public bool isGameOver;
@@ -70,6 +71,10 @@ public class GameManager : MonoBehaviour
         else if(MenuManager.isDogActive)
         {
             Instantiate(dogPlayer, pos, dogPlayer.transform.rotation);
+        }
+        else if(MenuManager.isHorseActive)
+        {
+            Instantiate(horsePlayer, pos, horsePlayer.transform.rotation);
         }
     }
 }

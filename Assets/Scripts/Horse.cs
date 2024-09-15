@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cow : PlayerController
+public class Horse : PlayerController
 {
-    private float speed = 5;
-    private float rotationSpeed = 100;
+    private float speed = 15;
+    private float rotationSpeed = 200;
     private Animator playerAnim;
     // Start is called before the first frame update
     void Start()

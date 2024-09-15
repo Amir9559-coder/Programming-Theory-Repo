@@ -834,8 +834,8 @@ MonoBehaviour:
   endingObj: {fileID: 1826397701}
   cowPlayer: {fileID: 8948178365815446341, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
   dogPlayer: {fileID: 6918511273826050843, guid: 7d197d44bf215244c8fe9bc52da3d72f, type: 3}
+  horsePlayer: {fileID: 1475538055003418448, guid: 42548b6a698e4214b8f53571991b6406, type: 3}
   scoreInt: 0
-  bestScore: 0
   healthInt: 0
   isGameOver: 0
 --- !u!4 &815325782

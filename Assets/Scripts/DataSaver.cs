@@ -6,6 +6,9 @@ using System.IO;
 public class DataSaver : MonoBehaviour
 {
     public static DataSaver Serialization;
+    private int oldCowScore;
+    private int oldDogScore;
+    private int oldHorseScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class DataSaver : MonoBehaviour
     {
         public int bestScoreCow;
         public int bestScoreDog;
+        public int bestScoreHorse;
     }
     public void Save()
     {
@@ -32,9 +36,25 @@ public class DataSaver : MonoBehaviour
         {
             data.bestScoreCow = GameManager.instance.scoreInt;
         }
-        else if (MenuManager.isDogActive)
+        else
+        {
+            data.bestScoreCow = oldCowScore;
+        }
+        if (MenuManager.isDogActive)
         {
             data.bestScoreDog = GameManager.instance.scoreInt;
+        }
+        else
+        {
+            data.bestScoreDog = oldDogScore;
+        }
+        if(MenuManager.isHorseActive)
+        {
+            data.bestScoreHorse = GameManager.instance.scoreInt;
+        }
+        else
+        {
+            data.bestScoreHorse = oldHorseScore;
         }
         string json = JsonUtility.ToJson(data);
         string path = Application.persistentDataPath + "/savefile.json";
@@ -50,10 +70,17 @@ public class DataSaver : MonoBehaviour
             if (MenuManager.isCowActive)
             {
                 MenuManager.bestScoreInt = data.bestScoreCow;
+                oldCowScore = data.bestScoreCow;
             }
             else if (MenuManager.isDogActive)
             {
                 MenuManager.bestScoreInt = data.bestScoreDog;
+                oldDogScore = data.bestScoreDog;
+            }
+            else if(MenuManager.isHorseActive)
+            {
+                MenuManager.bestScoreInt = data.bestScoreHorse;
+                oldHorseScore = data.bestScoreHorse;
             }
         }
     }

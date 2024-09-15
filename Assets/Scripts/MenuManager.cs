@@ -14,6 +14,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI bestScoreTX;
     public static bool isDogActive = false;
     public static bool isCowActive = false;
+    public static bool isHorseActive = false;
     public static int bestScoreInt;
     public void StartButton()
     {
@@ -24,6 +25,7 @@ public class MenuManager : MonoBehaviour
     {
         isDogActive = true;
         isCowActive = false;
+        isHorseActive = false;
         DataSaver.Serialization.LoadData();
         readyObj.SetActive(true);
         bestScore.SetActive(true);
@@ -33,6 +35,17 @@ public class MenuManager : MonoBehaviour
     {
         isDogActive = false;
         isCowActive = true;
+        isHorseActive = false;
+        DataSaver.Serialization.LoadData();
+        readyObj.SetActive(true);
+        bestScore.SetActive(true);
+        bestScoreTX.text = "Best Score : " + bestScoreInt;
+    }
+    public void HorseButton()
+    {
+        isDogActive = false;
+        isCowActive = false;
+        isHorseActive = true;
         DataSaver.Serialization.LoadData();
         readyObj.SetActive(true);
         bestScore.SetActive(true);
@@ -42,6 +55,7 @@ public class MenuManager : MonoBehaviour
     {
         isCowActive = false;
         isDogActive = false;
+        isHorseActive = false;
         itemsObj.SetActive(false);
         startObj.SetActive(true);
     }
