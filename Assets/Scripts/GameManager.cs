@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject cowPlayer;
     [SerializeField] GameObject dogPlayer;
     [SerializeField] GameObject horsePlayer;
+    private AudioSource audioPlayer;
     public int scoreInt;
     public int healthInt;
     public bool isGameOver;
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioPlayer = GetComponent<AudioSource>();
         scoreInt = 0;
         healthInt = 3;
     }
@@ -59,10 +61,12 @@ public class GameManager : MonoBehaviour
     }
     public void RestartButton()
     {
+        audioPlayer.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     public void BackToMenu()
     {
+        audioPlayer.Play();
         SceneManager.LoadScene(0);
     }
     void CreateChoosenItem()

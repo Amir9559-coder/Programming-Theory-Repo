@@ -7,10 +7,13 @@ public class Horse : PlayerController
     private float speed = 15;
     private float rotationSpeed = 200;
     private Animator playerAnim;
+    [SerializeField] AudioClip goodSound;
+    [SerializeField] AudioClip badSound;
     // Start is called before the first frame update
     void Start()
     {
         playerAnim = GetComponent<Animator>();
+        audioPlayer = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,6 +52,7 @@ public class Horse : PlayerController
             {
                 GameManager.instance.scoreInt += 10;
                 Destroy(other.gameObject);
+                audioPlayer.PlayOneShot(goodSound,1);
             }
         }
         else
@@ -57,6 +61,7 @@ public class Horse : PlayerController
             {
                 GameManager.instance.healthInt--;
                 Destroy(other.gameObject);
+                audioPlayer.PlayOneShot(badSound,1);
             }
         }
     }

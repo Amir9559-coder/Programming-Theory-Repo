@@ -12,14 +12,20 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject readyObj;
     [SerializeField] GameObject bestScore;
     [SerializeField] TextMeshProUGUI bestScoreTX;
+    private AudioSource buttonSound;
     public static bool isDogActive = false;
     public static bool isCowActive = false;
     public static bool isHorseActive = false;
     public static int bestScoreInt;
+    private void Start()
+    {
+        buttonSound = GetComponent<AudioSource>();
+    }
     public void StartButton()
     {
         startObj.SetActive(false);
         itemsObj.SetActive(true);
+        buttonSound.Play();
     }
     public void DogButton()
     {
@@ -30,6 +36,7 @@ public class MenuManager : MonoBehaviour
         readyObj.SetActive(true);
         bestScore.SetActive(true);
         bestScoreTX.text = "Best Score : " + bestScoreInt;
+        buttonSound.Play();
     }
     public void CowButton()
     {
@@ -40,6 +47,7 @@ public class MenuManager : MonoBehaviour
         readyObj.SetActive(true);
         bestScore.SetActive(true);
         bestScoreTX.text = "Best Score : " + bestScoreInt;
+        buttonSound.Play();
     }
     public void HorseButton()
     {
@@ -50,6 +58,7 @@ public class MenuManager : MonoBehaviour
         readyObj.SetActive(true);
         bestScore.SetActive(true);
         bestScoreTX.text = "Best Score : " + bestScoreInt;
+        buttonSound.Play();
     }
     public void BackButton()
     {
@@ -58,13 +67,17 @@ public class MenuManager : MonoBehaviour
         isHorseActive = false;
         itemsObj.SetActive(false);
         startObj.SetActive(true);
+        buttonSound.Play();
     }
     public void ReadyButton()
     {
+        buttonSound.Play();
         SceneManager.LoadScene(1);
+
     }
     public void ExitButton()
     {
+        buttonSound.Play();
 #if UNITY_EDITOR
         EditorApplication.ExitPlaymode();
 #else 
