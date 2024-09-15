@@ -150,16 +150,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89829151}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 679265838}
   m_Father: {fileID: 1826397702}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 266, y: -101}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -252, y: -40}
   m_SizeDelta: {x: 184.4, y: 62.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &89829153
@@ -1472,12 +1472,20 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 164077081631614579, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 164077081631614579, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5185124470264100834, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
       propertyPath: joyStick
       value: 
       objectReference: {fileID: 780856868}
+    - target: {fileID: 6333117517758259850, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
+      propertyPath: m_Size.y
+      value: 30.41
+      objectReference: {fileID: 0}
     - target: {fileID: 8948178365815446341, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
       propertyPath: m_Name
       value: Cow
@@ -1496,11 +1504,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8948178365815467369, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8948178365815467369, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8948178365815467369, guid: aa6aa36a71a87774fa7a7a6b1303f595, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1615,7 +1623,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 103.5, y: -37.300003}
+  m_AnchoredPosition: {x: 103.5, y: -37.299988}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1317041380
@@ -1647,8 +1655,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282173691
+  m_fontColor: {r: 0.9843137, g: 0.78431374, b: 0.23529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1917,8 +1925,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4282173691
+  m_fontColor: {r: 0.9843137, g: 0.78431374, b: 0.23529412, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2271,7 +2279,7 @@ Transform:
   m_GameObject: {fileID: 1932712913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_LocalScale: {x: 20, y: 1, z: 20}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -2468,7 +2476,11 @@ PrefabInstance:
       objectReference: {fileID: 780856868}
     - target: {fileID: 3537599791732671176, guid: 7d197d44bf215244c8fe9bc52da3d72f, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 3537599791732671176, guid: 7d197d44bf215244c8fe9bc52da3d72f, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6918511273825738475, guid: 7d197d44bf215244c8fe9bc52da3d72f, type: 3}
       propertyPath: m_RootOrder
@@ -2660,7 +2672,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722189705225552308, guid: 42548b6a698e4214b8f53571991b6406, type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 84
+      objectReference: {fileID: 0}
+    - target: {fileID: 6722189705225552308, guid: 42548b6a698e4214b8f53571991b6406, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42548b6a698e4214b8f53571991b6406, type: 3}

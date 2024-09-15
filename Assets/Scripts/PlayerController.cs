@@ -27,23 +27,30 @@ public abstract class PlayerController : MonoBehaviour
             
             //for JOYSTICK:
             playerRb.velocity = new Vector3(joyStick.Horizontal * speed, playerRb.velocity.y, joyStick.Vertical * speed);
-            //for keyWord:
-            horizontal = Input.GetAxis("Horizontal");
-            vertical = Input.GetAxis("Vertical");
-            transform.Translate(Vector3.forward * Time.deltaTime * vertical * speed);
-            transform.Rotate(Vector3.up * Time.deltaTime * horizontal * rotationSpeed);
+            if(joyStick.Horizontal !=0 || joyStick.Vertical != 0)
+            {
+                transform.rotation = Quaternion.LookRotation(playerRb.velocity);
+                
+            }
+            
         }
     }
     protected abstract void Boundary();
     protected void ControllAnimation(Animator playerAnim)
     {
-        if(horizontal == 0 && vertical == 0)
+        if(GameManager.instance.isGameOver == true)
         {
             playerAnim.SetFloat("Speed_f", 0.0f);
+            playerRb.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotationZ;
         }
-        else
+        else if(joyStick.Horizontal != 0 || joyStick.Vertical !=0)
         {
             playerAnim.SetFloat("Speed_f", 0.5f);
+        }
+        
+        else
+        {
+            playerAnim.SetFloat("Speed_f", 0.0f);
         }
     }
 }
