@@ -12,8 +12,14 @@ public class DataSaver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(Serialization != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
         Serialization = this;
         DontDestroyOnLoad(gameObject);
+        
     }
 
     // Update is called once per frame

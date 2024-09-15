@@ -61,6 +61,10 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     void CreateChoosenItem()
     {
         Vector3 pos = new Vector3(0, 0, 0);
